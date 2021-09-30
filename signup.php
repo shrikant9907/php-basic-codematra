@@ -30,7 +30,7 @@ if(isset($_POST['signup'])) {
         if ($result2){  
           $validationError = "<div class='alert alert-success'>You are registered successfully.</div>";
           header('Location: login.php');
-          exit();
+          die();
         } else {
           $validationError = "<div class='alert alert-danger'> Sorry, There is some error. Please try again.</div>"; 
         }

@@ -14,10 +14,14 @@ if(isset($_POST['login'])) {
     if($result) {
       $num_rows = mysqli_num_rows($result);
       if($num_rows>0) {  
+        $row = mysqli_fetch_assoc( $result );
+        $_SESSION['uid'] = $row['id'];
         $validationError = "<div class='alert alert-success'>You are logged in successfully.</div>" ;   
-        header("Location: dashboard.php");
+        header("Location: user-list.php");
+        die();
       }
     } else {
+      unset($_SESSION['uid']);
       $validationError = "<div class='alert alert-danger'>Email or Password incorrect.</div>" ;   
     }
   } 
@@ -38,7 +42,7 @@ if(isset($_POST['login'])) {
           <label for="email">Password <span class="text-danger">*</span></label>
           <input type="password" id="password" maxlength="6" class="form-control" name="password" placeholder="Password" required="required" />
         </div>
-        <button name="login" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button name="login" class="btn btn-primary btn-block" type="submit">Login</button>
       </form>
     </div>
   </div>

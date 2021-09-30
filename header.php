@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include_once 'functions.php'; 
+?>
 <!doctype html>
 <html>
 <head>
@@ -29,13 +33,18 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav text-center">
+                <ul class="navbar-nav text-center w-100">
                   <li class="nav-item active">
                       <a class="nav-link" href="index.php">Home</a>
                   </li>
                   <li class="nav-item py-2">
-                    <a class="btn btn-secondary btn-sm" href="login.php">Login</a>
-                    <a class="btn btn-primary btn-sm" href="signup.php">Sign up</a>
+                    <?php if(!isset($_SESSION['uid'])) { ?>
+                      <a class="btn btn-secondary btn-sm" href="login.php">Login</a>
+                      <a class="btn btn-primary btn-sm" href="signup.php">Sign up</a>
+                    <?php } else { ?>
+                      <a class="btn btn-secondary btn-sm" href="user-list.php">Users List</a>
+                      <a class="btn btn-primary btn-sm" href="logout.php">Log Out</a>
+                    <?php } ?>
                   </li>
                 </ul>
               </div>
