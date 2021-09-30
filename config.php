@@ -1,55 +1,47 @@
 <?php
-
 /*
- * Global Variable - Connection 
- */
-
+* Global Variable - Connection | Site Codematra
+*/
 global $connection;  
 
 /*
- * Required Variable 
- */
-
+* Required Variable | Site Codematra
+*/
 $hostname = 'localhost';
 $dbusername = 'root'; 
 $dbpassword = ''; 
-$databasename = 'website_str'; 
-
+$databasename = 'phpdb1'; 
 
 /*
- * Connect With Server
- */
-
+* Connect With Server | Site Codematra
+*/
 $connection = mysqli_connect($hostname,$dbusername,$dbpassword);
 if(!$connection) {
-    die('Error in connect with server');   
+  die('Error in connect with server');   
 }  
 
 /*
- * Create Database
- */
-//$sql = "CREATE DATABASE $databasename";
+* Create Database | Site Codematra
+*/
 $sql = "CREATE DATABASE IF NOT EXISTS $databasename"; 
 $output = mysqli_query($connection, $sql); 
 if(!$output) {
-    die('Error in database creation. ');
+  die('Error in database creation. ');
+}
+ 
+/*
+*  Connect with database | Site Codematra
+*/
+$database = mysqli_select_db($connection, $databasename);  
+if(!$database) {
+  die('Error in connect with database');
 }
 
 /*
- * Drop Database
- */
+* Drop Database | Site Codematra
+*/
 //$sql = "DROP DATABASE $databasename";
 //$output = mysqli_query($connection, $sql); 
 //if($output) {
 //    die("Database Deleted.<br />");  
 //} 
- 
-
-/*
- *  Connect with database
- */
-
-$database = mysqli_select_db($connection, $databasename);  
-if(!$database) {
-    die('Error in connect with database');
-}  
