@@ -1,57 +1,43 @@
-
-/* Default CSS */
-body, 
-html {
+/*
+* Common CSS Start
+*/
+body, html {
 	padding:0px;
 	margin: 0px; 
 }
 
 body {
-	    background:#eeeeee;
-        font-family: 'Montserrat', sans-serif;  
-        color:#333333;
-        font-size:14px;  
-        line-height: 20px;  /*New*/ 
+  font-family: 'Roboto', sans-serif;
+  background:#ffffff;
+  color:#333333;
+  font-size:16px;  
+  line-height: 20px;  
+  font-weight: 300;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-weight: 700;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
 }
 
-/*Header Menu*/
 
-header {
-    /*background: #fff;*/
+/*
+* Header Start 
+*/
+.custom-header .navbar-nav {
+  width: 100%;
+  text-align: center;
 }
 
-/*Nav Bar*/ 
-ul.nav_menu_custom {
-    width: 100%;
-    text-align: center;
+.custom-header .navbar-nav li {
+  margin: 0 auto;
 }
 
-ul.nav_menu_custom li {
-    margin: 0 auto;
-}
-
-ul.nav_menu_custom li a {
-    color: #333333;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 15px 0;
-}
-
-/*Search*/ 
-.search_layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 5;
-    display: none; 
+.custom-header .navbar-nav a.nav-link {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 15px 0;
 }
 
 form.fixed_full_search {
@@ -153,47 +139,7 @@ h2.main-heading span {
     padding: 0px 20px;
     font-size: 20px;
 }
-
-
-/*footer*/
-
-.footer_section {
-    background: #222222;
-    color: #fff;
-}
-
-.footer_section a {
-     color: #fff;
-}
-
-.footer_section h3 {
-    font-size: 18px;
-}
-
-   .footer_section ul {
-    padding: 0px; 
-}
-
-    .footer_section ul li {
-    list-style: none; 
-    padding: 5px 0;
-}
-
-    .footer_section ul.social_links li {
-    display: inline-block;
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 5px;
-}
-
-    .footer_bottom {
-    position: relative;
-    bottom: -62px;
-    background: #111;
-    padding: 15px 0;
-}
-
-                                                                                                      
+                                                                                                     
     .form-signin{
 	padding:20px;
 	margin:100px auto;
